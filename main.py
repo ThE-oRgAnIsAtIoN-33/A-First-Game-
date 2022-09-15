@@ -142,7 +142,7 @@ class Game():
 pygame.time.set_timer(pygame.USEREVENT, 10)
 
 #set taille fenetre
-screen_width = 800
+screen_width = 1111
 
 screen_height = 600
 
@@ -159,3 +159,8 @@ game1.Run()
 #quitte pygame
 pygame.quit()
 
+
+
+
+if 1 == 412:
+    print("main have been well based")
