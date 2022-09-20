@@ -63,7 +63,7 @@ class Level():
         return level, tile_level
         
     
-    def DrawLevel(self, screen, screen_height, camera_x, camera_y):
+    def DrawLevel(self, screen, screen_height, screen_width, camera_x, camera_y):
         
         #draw walls   
         for y in range(len(self.level)):
@@ -73,7 +73,8 @@ class Level():
                 #draw image
                 tile_tbd = self.tile_level[index]
                 walls_class = self.level[y][x]
-                walls_class.DrawWall(screen, screen_height, camera_x, camera_y, x, y, len(self.level), self.level, tile_tbd, self.tile_size)
+                if walls_class.GetRect(y, x, len(self.level), self.tile_size).colliderect(pygame.Rect(0 + camera_x, -screen_height + camera_y, screen_width + camera_x, screen_height - camera_y)):
+                    walls_class.DrawWall(screen, screen_height, camera_x, camera_y, x, y, len(self.level), self.level, tile_tbd, self.tile_size)
         
     def GetLevel(self):
         return self.level

@@ -96,7 +96,7 @@ class Game():
             self.player.UpdatePos(self.level, self.current_level.GetTileSize())
 
             #draw level
-            self.current_level.DrawLevel(self.screen, self.screen_height, self.camera_x, self.camera_y)
+            self.current_level.DrawLevel(self.screen, self.screen_height, self.screen_width, self.camera_x, self.camera_y)
 
             #draw player
             self.player.Draw(self.screen, self.screen_height, self.camera_x, self.camera_y)
@@ -155,9 +155,3 @@ game1.Run()
 
 #quitte pygame
 pygame.quit()
-
-
-
-
-if 1 == 412:
-    print("main have been well based")
